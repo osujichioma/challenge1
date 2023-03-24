@@ -1,4 +1,6 @@
-# challenge1
+# FIFA 21 DATASET
+![image](https://user-images.githubusercontent.com/100517015/227406323-e7402cbb-944a-422d-b39a-552b6065e856.png)
+
 The objectives of the cleaning exercise was to ensure; 
 1. All the columns had a proper and consistent data type.
 2. The numerical data columns were fit for calculations and analysis.
