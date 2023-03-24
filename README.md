@@ -1,8 +1,42 @@
 # challenge1
-The objectives of the clening exercise was to ensure; 
-1. All the columns should had a proper and consistent data type.
-2. The numerical data columns were fit for analysis.
+The objectives of the cleaning exercise was to ensure; 
+1. All the columns had a proper and consistent data type.
+2. The numerical data columns were fit for calculations and analysis.
 
 ABOUT THE DATASET
 
 The dataset used for the challenge is FIFA 21. It was gotten and can be sourced from kaggle (https://www.kaggle.com/datasets/yagunnersya/fifa-21-messy-raw-dataset-for-cleaning-exploring). The dataset was web scrapped from sofifa.com and presented in a very messy state. The dataset contains details of football players and their performances till 2021. There are 18979 rows and 77 columns present in the FIFA 21 data.
+
+DATA CLEANING PROCESS
+
+1. To perform an adequate analysis or EDA process using python, some libaries needed to be imported (Pandas and Numpy) and the FIFA 21 dataset was loaded using the .read_csv funtion. Also, the function .head was used to look at the dataset to figure out how best to start the cleaning process.
+![image](https://user-images.githubusercontent.com/100517015/227386542-754621c6-6426-474f-b244-1e10ff0aa489.png)
+
+2. For the analysis, some columns were dropped as they were not so relevant for the analysis and the columns dropped were photoUrl, playerUrl and Loan date end. The Loan date end column [18], had 17,966 missing columns. At this point, the dataset contained 74 columns and 18979 rows.
+![image](https://user-images.githubusercontent.com/100517015/227388103-7ca0d60b-027d-4f58-bdad-871df483888a.png)
+
+3. The next step was to check for null values in the dataset and it was discovered that the 'Hits' column had 2595 null values and it was replaced with '0s'. The reason was to ensure that the column was fit for numeric analysis
+![image](https://user-images.githubusercontent.com/100517015/227388673-2ce7e79a-f27f-402b-8fb7-9a977c995582.png)
+
+4.The next column cleaned was 'Joined' column. Here, the datatype was presented wrongly and needed to be cleaned. The first step was to import the datetime from the datetime library and using a for loop, the datatype was changed to datetime64
+![image](https://user-images.githubusercontent.com/100517015/227389048-1ebebe41-898b-4526-ada8-c951b8be58e6.png)
+![image](https://user-images.githubusercontent.com/100517015/227389098-bd840204-5846-496f-9e18-9cb53b88c632.png)
+![image](https://user-images.githubusercontent.com/100517015/227389156-be05aec8-af2f-4fc8-952e-8f597e71f9af.png)
+
+5. In data cleaning, it is important to ensure consistencies in naming conventions and thus, the column called '↓OVA' was changed to 'OVA'. Also, the 'Clubs' column contained '\n\n\n\n\' and this was replaced with space ''
+![image](https://user-images.githubusercontent.com/100517015/227391039-9ed39579-13a3-41f3-a903-552950e189e8.png)
+
+6. The next column cleaned was the 'Contract' renmaned as 'Contractstatus'. The column contained values like '~', 'Dec 31 on loan', 'free'. This was changed to reflect '~' as ACTIVE status, 'free' as FREE status and 'on loan' as ON LOAN status and casted as an 'object64' datatype.
+![image](https://user-images.githubusercontent.com/100517015/227396185-d50edd25-e431-4a56-b3b4-66a91535f413.png)
+![image](https://user-images.githubusercontent.com/100517015/227396420-02179c4a-9f80-4d0b-901c-6b3309221adf.png)
+
+7. 
+
+
+
+
+
+
+
+
+
